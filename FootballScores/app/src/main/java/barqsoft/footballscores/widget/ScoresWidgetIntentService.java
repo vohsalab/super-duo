@@ -70,7 +70,9 @@ public class ScoresWidgetIntentService extends IntentService {
         SharedPreferences sharedPref = PreferenceManager
                 .getDefaultSharedPreferences(getApplicationContext());
         String favoriteTeam = sharedPref.getString(FavoriteTeamDialogFragment.PREF_NAME, "");
-
+        if (favoriteTeam.equals("")) {
+            favoriteTeam = "Manchester United FC";
+        }
         String homeTeam = "";
         String awayTeam = "";
         String score  = "";
